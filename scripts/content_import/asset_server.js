@@ -7,14 +7,14 @@ const convert = require('./convert');
 const waitTimeLengthMins = 1;
 
 const transcriptionTypes = [
-  'tc', 'tcn', 'tl'
+  'tc', 'tl'
 ];
 
 function downloadFiles(inputDir) {
 
   // if folder is empty, clone repository. otherwise pull from repo
   if( fs.readdirSync(inputDir).length === 0 ) {
-    execSync(`git clone https://github.com/performant-software/m-k-manuscript-data.git ${inputDir}`, (error, stdout, stderr) => {
+    execSync(`git clone https://github.com/performant-software/vanmander-data.git ${inputDir}`, (error, stdout, stderr) => {
       console.log(`${stdout}`);
       console.log(`${stderr}`);
       if (error !== null) {
@@ -33,13 +33,13 @@ function downloadFiles(inputDir) {
 }
 
 function reorganizeFiles(pullDir, orderedDir) {
-  const inputDir = `${pullDir}/ms-xml`;
+  const inputDir = `${pullDir}/text-xml/example-chapter`;
 
-  const listDir = fs.readdirSync(`${pullDir}/ms-xml/tc`);
+  const listDir = fs.readdirSync(`${pullDir}/text-xml/example-chapter/tc`);
 
   listDir.forEach( page => {
     // extract folio ID
-    const matches = page.match(/p[0-9]{3}[vr]/);
+    const matches = page.match(/[0-9]{3}[vr]/);
     // make sure there are no other files that aren't pages
     const folioID = matches ? matches[0] : null;
 
@@ -48,7 +48,7 @@ function reorganizeFiles(pullDir, orderedDir) {
 
       if( dirExists(targetDir) ) {
         transcriptionTypes.forEach( transcriptionType => {
-          const sourceFile = `${inputDir}/${transcriptionType}/${transcriptionType}_${folioID}_preTEI.xml`;
+          const sourceFile = `${inputDir}/${transcriptionType}/test_${folioID}_${transcriptionType}.xml`;
           if(fs.existsSync(sourceFile)) {
             const targetFile = `${targetDir}/${transcriptionType}_${folioID}.txt`;
             fs.copyFileSync(sourceFile, targetFile);
@@ -78,7 +78,7 @@ function copyFolioXMLs( sourcePath, folioPath ) {
     if( folioFolder.startsWith('.') ) return;
 
     // extract the folio ID from the folder name
-    const matches = folioFolder.match(/p[0-9]{3}[vr]/);
+    const matches = folioFolder.match(/[0-9]{3}[vr]/);
     const folioID = matches ? matches[0] : null;
 
     if( folioID ) {

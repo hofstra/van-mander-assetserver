@@ -3,10 +3,10 @@ const fs = require('fs');
 const devConfiguration = {
   iiifDomain: "http://localhost:4000",
   transcriptionDomain: "http://localhost:4000",
-  folioPath: "/bnf-ms-fr-640/folio",
-  listPath: "/list-dev",
+  folioPath: "/vanmnder/folio",
+  listPath: "list-dev",
   manifestFilename: 'manifest-dev.json',
-  annotationListPath: "/bnf-ms-fr-640/list-dev"
+  annotationListPath: "/vanmander/list-dev"
 };
 
 const prodConfiguration = {
@@ -39,7 +39,7 @@ const stagingConfiguration = {
 const outputDir = "TEMP";
 
 function generate_iiif_files(config) {
-  let manifestJSON = fs.readFileSync(`${__dirname}/bnf_manifest.json`, "utf8");
+  let manifestJSON = fs.readFileSync(`${__dirname}/vanmander-manifest-test-chapter.json`, "utf8");
   let manifest = JSON.parse(manifestJSON);
   let canvases = manifest["sequences"][0]["canvases"];
 
@@ -52,7 +52,7 @@ function generate_iiif_files(config) {
   if( !fs.existsSync(listDir) ) fs.mkdirSync(listDir);
 
   for( let canvas of canvases ) {
-    let folioID = generateFolioID(canvas["label"]);
+    let folioID = canvas["label"];
 
     if( folioID ) {
       let fileName = `${folioID}.json`;
@@ -74,7 +74,6 @@ function generate_iiif_files(config) {
       annoList["@id"] = annotationListURL;
       let transcriptionURLs = [
         folioURL + '/tc',
-        folioURL + '/tcn',
         folioURL + '/tl'
       ];
 

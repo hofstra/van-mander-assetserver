@@ -4,7 +4,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const transcriptionTypes = [
-  'tc', 'tcn', 'tl'
+  'tc', 'tl'
 ];
 
 const figuresDir = "/bnf-ms-fr-640/figures";

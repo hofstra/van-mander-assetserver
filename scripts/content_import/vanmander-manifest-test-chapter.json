@@ -1,0 +1,230 @@
+{
+	"@context": "http://iiif.io/api/presentation/2/context.json",
+	"@id": "http://6ec87257-b55a-462e-b79b-cf11cec7e662",
+	"@type": "sc:Manifest",
+	"label": "[Click to edit label]",
+	"metadata": [],
+	"description": [
+		{
+			"@value": "[Click to edit description]",
+			"@language": "en"
+		}
+	],
+	"license": "https://creativecommons.org/licenses/by/3.0/",
+	"attribution": "[Click to edit attribution]",
+	"sequences": [
+		{
+			"@id": "http://4cd8b691-74de-48b6-aaec-c15d8e2738d1",
+			"@type": "sc:Sequence",
+			"label": [
+				{
+					"@value": "Normal Sequence",
+					"@language": "en"
+				}
+			],
+			"canvases": [
+				{
+					"@id": "http://c629f0c8-fb58-4e6d-bd0e-ea47e0c1a142",
+					"@type": "sc:Canvas",
+					"label": "F008v",
+					"height": 2866,
+					"width": 2093,
+					"images": [
+						{
+							"@context": "http://iiif.io/api/presentation/2/context.json",
+							"@id": "http://6934c54d-11ef-4fe2-810a-cddc9f878343",
+							"@type": "oa:Annotation",
+							"motivation": "sc:painting",
+							"resource": {
+								"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F008v.tiff/full/full/0/default.jpg",
+								"@type": "dctypes:Image",
+								"format": "image/jpeg",
+								"service": {
+									"@context": "http://iiif.io/api/image/2/context.json",
+									"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F008v.tiff",
+									"profile": [
+										"http://iiif.io/api/image/2/level1.json",
+										{
+											"formats": [
+												"jpg"
+											],
+											"qualities": [
+												"native",
+												"color",
+												"gray"
+											],
+											"supports": [
+												"regionByPct",
+												"sizeByForcedWh",
+												"sizeByWh",
+												"sizeAboveFull",
+												"rotationBy90s",
+												"mirroring",
+												"gray"
+											]
+										}
+									]
+								},
+								"height": 2866,
+								"width": 2093
+							},
+							"on": "http://c629f0c8-fb58-4e6d-bd0e-ea47e0c1a142"
+						}
+					],
+					"related": ""
+				},
+				{
+					"@id": "http://ffb0e960-2169-4632-9988-f51a27c57b87",
+					"@type": "sc:Canvas",
+					"label": "F009r",
+					"height": 2921,
+					"width": 2093,
+					"images": [
+						{
+							"@context": "http://iiif.io/api/presentation/2/context.json",
+							"@id": "http://1e2665fd-2f10-49bf-bdd2-4d9c9e552a21",
+							"@type": "oa:Annotation",
+							"motivation": "sc:painting",
+							"resource": {
+								"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F009r.tiff/full/full/0/default.jpg",
+								"@type": "dctypes:Image",
+								"format": "image/jpeg",
+								"service": {
+									"@context": "http://iiif.io/api/image/2/context.json",
+									"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F009r.tiff",
+									"profile": [
+										"http://iiif.io/api/image/2/level1.json",
+										{
+											"formats": [
+												"jpg"
+											],
+											"qualities": [
+												"native",
+												"color",
+												"gray"
+											],
+											"supports": [
+												"regionByPct",
+												"sizeByForcedWh",
+												"sizeByWh",
+												"sizeAboveFull",
+												"rotationBy90s",
+												"mirroring",
+												"gray"
+											]
+										}
+									]
+								},
+								"height": 2921,
+								"width": 2093
+							},
+							"on": "http://ffb0e960-2169-4632-9988-f51a27c57b87"
+						}
+					],
+					"related": ""
+				},
+				{
+					"@id": "http://49189f37-b89c-4672-8cd4-44006f00b731",
+					"@type": "sc:Canvas",
+					"label": "F009v",
+					"height": 2866,
+					"width": 2092,
+					"images": [
+						{
+							"@context": "http://iiif.io/api/presentation/2/context.json",
+							"@id": "http://30e3bd32-018f-4f15-bd5f-e6c30de36c08",
+							"@type": "oa:Annotation",
+							"motivation": "sc:painting",
+							"resource": {
+								"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F009v.tiff/full/full/0/default.jpg",
+								"@type": "dctypes:Image",
+								"format": "image/jpeg",
+								"service": {
+									"@context": "http://iiif.io/api/image/2/context.json",
+									"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F009v.tiff",
+									"profile": [
+										"http://iiif.io/api/image/2/level1.json",
+										{
+											"formats": [
+												"jpg"
+											],
+											"qualities": [
+												"native",
+												"color",
+												"gray"
+											],
+											"supports": [
+												"regionByPct",
+												"sizeByForcedWh",
+												"sizeByWh",
+												"sizeAboveFull",
+												"rotationBy90s",
+												"mirroring",
+												"gray"
+											]
+										}
+									]
+								},
+								"height": 2866,
+								"width": 2092
+							},
+							"on": "http://49189f37-b89c-4672-8cd4-44006f00b731"
+						}
+					],
+					"related": ""
+				},
+				{
+					"@id": "http://9637fb93-2658-47dc-8501-0bd7dadc8229",
+					"@type": "sc:Canvas",
+					"label": "F010r",
+					"height": 2921,
+					"width": 2093,
+					"images": [
+						{
+							"@context": "http://iiif.io/api/presentation/2/context.json",
+							"@id": "http://d756e113-5128-4652-9f4f-80d78808b0c9",
+							"@type": "oa:Annotation",
+							"motivation": "sc:painting",
+							"resource": {
+								"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F010r.tiff/full/full/0/default.jpg",
+								"@type": "dctypes:Image",
+								"format": "image/jpeg",
+								"service": {
+									"@context": "http://iiif.io/api/image/2/context.json",
+									"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F010r.tiff",
+									"profile": [
+										"http://iiif.io/api/image/2/level1.json",
+										{
+											"formats": [
+												"jpg"
+											],
+											"qualities": [
+												"native",
+												"color",
+												"gray"
+											],
+											"supports": [
+												"regionByPct",
+												"sizeByForcedWh",
+												"sizeByWh",
+												"sizeAboveFull",
+												"rotationBy90s",
+												"mirroring",
+												"gray"
+											]
+										}
+									]
+								},
+								"height": 2921,
+								"width": 2093
+							},
+							"on": "http://9637fb93-2658-47dc-8501-0bd7dadc8229"
+						}
+					],
+					"related": ""
+				}
+			]
+		}
+	],
+	"structures": []
+}
