@@ -44,13 +44,13 @@ function reorganizeFiles(pullDir, orderedDir) {
     const folioID = matches ? matches[0] : null;
 
     if(folioID) {
-      const targetDir = `${orderedDir}/${folioID}`;
+      const targetDir = `${orderedDir}/F${folioID}`;
 
       if( dirExists(targetDir) ) {
         transcriptionTypes.forEach( transcriptionType => {
           const sourceFile = `${inputDir}/${transcriptionType}/test_${folioID}_${transcriptionType}.xml`;
           if(fs.existsSync(sourceFile)) {
-            const targetFile = `${targetDir}/${transcriptionType}_${folioID}.txt`;
+            const targetFile = `${targetDir}/${transcriptionType}_F${folioID}.txt`;
             fs.copyFileSync(sourceFile, targetFile);
           }
         });
@@ -78,7 +78,7 @@ function copyFolioXMLs( sourcePath, folioPath ) {
     if( folioFolder.startsWith('.') ) return;
 
     // extract the folio ID from the folder name
-    const matches = folioFolder.match(/[0-9]{3}[vr]/);
+    const matches = folioFolder.match(/F[0-9]{3}[vr]/);
     const folioID = matches ? matches[0] : null;
 
     if( folioID ) {

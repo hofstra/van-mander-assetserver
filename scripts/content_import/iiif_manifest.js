@@ -3,7 +3,7 @@ const fs = require('fs');
 const devConfiguration = {
   iiifDomain: "http://localhost:4000",
   transcriptionDomain: "http://localhost:4000",
-  folioPath: "/vanmnder/folio",
+  folioPath: "/vanmander/folio",
   listPath: "list-dev",
   manifestFilename: 'manifest-dev.json',
   annotationListPath: "/vanmander/list-dev"
@@ -54,6 +54,9 @@ function generate_iiif_files(config) {
   for( let canvas of canvases ) {
     let folioID = canvas["label"];
 
+    canvas["@id"] = `https://iip.textlab.org/?IIIF=vanmander/converted/${folioID}`;
+    canvas["thumbnail"] = {};
+    canvas["thumbnail"]["@id"] = `https://iip.textlab.org/?IIIF=vanmander/converted/${folioID}.tiff/full/120,192/0/default.jpg`;
     if( folioID ) {
       let fileName = `${folioID}.json`;
       let annotationListURL =  `${config.iiifDomain}${config.annotationListPath}/${fileName}`;
