@@ -39,7 +39,7 @@ const stagingConfiguration = {
 const outputDir = "TEMP";
 
 function generate_iiif_files(config) {
-  let manifestJSON = fs.readFileSync(`${__dirname}/vanmander-manifest-test-chapter.json`, "utf8");
+  let manifestJSON = fs.readFileSync(`${__dirname}/manifest-vanmander-example-chapter.json`, "utf8");
   let manifest = JSON.parse(manifestJSON);
   let canvases = manifest["sequences"][0]["canvases"];
 

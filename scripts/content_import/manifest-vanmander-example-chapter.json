@@ -24,6 +24,56 @@
 			],
 			"canvases": [
 				{
+					"@id": "http://44829fb9-9e55-4625-ba91-2256523781f7",
+					"@type": "sc:Canvas",
+					"label": "F008r",
+					"height": 2921,
+					"width": 2093,
+					"images": [
+						{
+							"@context": "http://iiif.io/api/presentation/2/context.json",
+							"@id": "http://f9256e58-048e-4603-b6be-65e78781f5c2",
+							"@type": "oa:Annotation",
+							"motivation": "sc:painting",
+							"resource": {
+								"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F008r.tiff/full/full/0/default.jpg",
+								"@type": "dctypes:Image",
+								"format": "image/jpeg",
+								"service": {
+									"@context": "http://iiif.io/api/image/2/context.json",
+									"@id": "https://iip.textlab.org/?IIIF=vanmander/converted/F008r.tiff",
+									"profile": [
+										"http://iiif.io/api/image/2/level1.json",
+										{
+											"formats": [
+												"jpg"
+											],
+											"qualities": [
+												"native",
+												"color",
+												"gray"
+											],
+											"supports": [
+												"regionByPct",
+												"sizeByForcedWh",
+												"sizeByWh",
+												"sizeAboveFull",
+												"rotationBy90s",
+												"mirroring",
+												"gray"
+											]
+										}
+									]
+								},
+								"height": 2921,
+								"width": 2093
+							},
+							"on": "http://44829fb9-9e55-4625-ba91-2256523781f7"
+						}
+					],
+					"related": ""
+				},
+				{
 					"@id": "http://c629f0c8-fb58-4e6d-bd0e-ea47e0c1a142",
 					"@type": "sc:Canvas",
 					"label": "F008v",
@@ -71,7 +121,7 @@
 							"on": "http://c629f0c8-fb58-4e6d-bd0e-ea47e0c1a142"
 						}
 					],
-					"related": ""
+					"metadata": []
 				},
 				{
 					"@id": "http://ffb0e960-2169-4632-9988-f51a27c57b87",
@@ -221,7 +271,20 @@
 							"on": "http://9637fb93-2658-47dc-8501-0bd7dadc8229"
 						}
 					],
-					"related": ""
+					"related": "",
+					"metadata": [
+						{
+							"label": "Label",
+							"value": "Value"
+						},
+						{
+							"label": "Label",
+							"value": {
+								"@value": "",
+								"@language": ""
+							}
+						}
+					]
 				}
 			]
 		}
