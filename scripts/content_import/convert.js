@@ -60,7 +60,6 @@ const filterOut = [
   'id',
   'margin',
   'render',
-  'comment'
 ];
 
 function validLayoutCode( layoutCode ) {
