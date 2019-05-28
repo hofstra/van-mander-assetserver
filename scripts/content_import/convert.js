@@ -7,7 +7,7 @@ const transcriptionTypes = [
   'tc', 'tl'
 ];
 
-const figuresDir = "/bnf-ms-fr-640/figures";
+const figuresDir = "/vanmander/figures/images";
 
 const marginCodes = [
   'middle',
@@ -57,7 +57,6 @@ const convertToSpan =[
 ];
 
 const filterOut = [
-  'id',
   'margin',
   'render',
 ];
@@ -118,7 +117,7 @@ function errorMessage(errorMessage) {
 
 function findDataElement( parent, elementName ) {
   for( let child of parent.children ) {
-    if( child.nodeName === elementName ) {
+    if( child.nodeName.toLowerCase() === elementName.toLowerCase() ) {
       return child.innerHTML;
     }
   }
@@ -143,10 +142,21 @@ function findAndReplaceElementName( htmlDoc, parent, oldElementName, newElementN
   }
 }
 
+function findAndInsertImages( htmlDoc, parent, imageElementName) {
+  let elements = parent.querySelectorAll( imageElementName );
+  for (let i = 0; i < elements.length; i++) {
+    var el = elements[i];
+    let newEl = convertFigureInAB( htmlDoc, el );
+    el.replaceWith(newEl);
+  }
+}
+
 function convertPhraseLevelMarkup( htmlDoc, el, elementName ) {
   let newEl = htmlDoc.createElement(elementName);
   newEl.innerHTML = el.innerHTML;
 
+  findAndInsertImages( htmlDoc, newEl, 'figure');
+  
   findAndReplaceElementName( htmlDoc, newEl, 'LB', 'BR' );
   findAndReplaceElementName( htmlDoc, newEl, 'DEL', 'S' );
 
@@ -174,11 +184,20 @@ function convertHead( htmlDoc, head ) {
 
 function convertFigure( htmlDoc, figure ) {
   let figureID = findDataElement( figure, 'id' );
-  let figureURL = ( figureID ) ? `${figuresDir}/${figureID.substr(4)}.png` : null;
+  let figureURL = ( figureID ) ? `${figuresDir}/${figureID.substr(4)}.jpg` : null;
   let figDiv = htmlDoc.createElement('div');
   figDiv.id = findDataElement( figure, 'id' );
   figDiv.dataset.layout = validLayoutCode( findDataElement( figure, 'margin' ) );
   figDiv.innerHTML = ( figureURL ) ?  `<img alt='' className='inline-figure' src='${figureURL}'/>` : "";
+  return figDiv;
+}
+
+function convertFigureInAB( htmlDoc, figure ) {
+  let figureID = findDataElement( figure, 'id' );
+  let figureURL = ( figureID ) ? `${figuresDir}/${figureID.substr(4)}.jpg` : null;
+  let figDiv = htmlDoc.createElement('figure');
+
+  figDiv.innerHTML = (figureURL) ? `<img alt='' className='inline-figure' src='${figureURL}'/>` : "";
   return figDiv;
 }
 
