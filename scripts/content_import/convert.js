@@ -184,7 +184,7 @@ function convertHead( htmlDoc, head ) {
 
 function convertFigure( htmlDoc, figure ) {
   let figureID = findDataElement( figure, 'id' );
-  let figureURL = ( figureID ) ? `${figuresDir}/${figureID.substr(4)}.jpg` : null;
+  let figureURL = ( figureID ) ? `${figuresDir}/${figureID}.jpg` : null;
   let figDiv = htmlDoc.createElement('div');
   figDiv.id = findDataElement( figure, 'id' );
   figDiv.dataset.layout = validLayoutCode( findDataElement( figure, 'margin' ) );
@@ -194,7 +194,7 @@ function convertFigure( htmlDoc, figure ) {
 
 function convertFigureInAB( htmlDoc, figure ) {
   let figureID = findDataElement( figure, 'id' );
-  let figureURL = ( figureID ) ? `${figuresDir}/${figureID.substr(4)}.jpg` : null;
+  let figureURL = ( figureID ) ? `${figuresDir}/${figureID}.jpg` : null;
   let figDiv = htmlDoc.createElement('figure');
 
   figDiv.innerHTML = (figureURL) ? `<img alt='' className='inline-figure' src='${figureURL}'/>` : "";
