@@ -13,18 +13,18 @@ const prodConfiguration = {
   iiifDomain: "http://edition.makingandknowing.org",
   transcriptionDomain: "http://209.97.145.244",
   folioPath: "/folio",
-  listPath: "/list",
+  listPath: "list",
   manifestFilename: 'manifest.json',
   annotationListPath: "/bnf-ms-fr-640/list"
 };
 
 const stagingConfiguration = {
-  iiifDomain: "http://edition-staging.makingandknowing.org",
-  transcriptionDomain: "http://209.97.145.244",
-  folioPath: "/folio",
-  listPath: "/list",
+  iiifDomain: "http://68.183.29.209",
+  transcriptionDomain: "http://68.183.29.209",
+  folioPath: "/vanmander/folio",
+  listPath: "list-staging",
   manifestFilename: 'manifest-staging.json',
-  annotationListPath: "/bnf-ms-fr-640/list"
+  annotationListPath: "/vanmander/list-staging"
 };
 
 // const prodConfiguration2 = {
