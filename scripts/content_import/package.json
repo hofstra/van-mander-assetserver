@@ -9,7 +9,7 @@
     "he": "^1.1.1",
     "html-beautify": "^1.0.4",
     "html-minifier": "^3.5.9",
-    "jsdom": "^11.6.2",
+    "jsdom": "^16.5.0",
     "lunr": "2.3.3",
     "lunr-languages": "^1.0.0",
     "markdown-it": "^8.4.1",
